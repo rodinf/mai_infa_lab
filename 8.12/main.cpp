@@ -37,14 +37,18 @@ int main() {
 	else 
 		std::cout<<"Visokosny: No"<<std::endl;
 	
+	
+	// выводим месяцы
 	for(int i=1; i<= 12; i++){
 		std::cout<<months[i]<<" ";
 	}
 	
 	std::cout<<std::endl;
-		
+	
+	// считаем разницу между днями
 	int diff = abs(Year.d2 - Year.d1);
 	
+	// это на случай, если 1 месяц больше 2
 	unsigned int m1_sort = Year.m1, m2_sort = Year.m2, m_flip;
 	
 	if(Year.m1 > Year.m2){
@@ -53,6 +57,7 @@ int main() {
 		m2_sort = m_flip;
 	}
 	
+	// добавляем к разнице дней дни в месяцах между ними
 	for(int i = m1_sort; i< m2_sort; i++){
 		
 		diff += months[i];
